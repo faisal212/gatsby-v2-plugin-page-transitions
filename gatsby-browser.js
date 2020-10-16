@@ -1,7 +1,6 @@
 'use strict';
 
-var _createBrowserHistory = require('history/createBrowserHistory');
-
+var _createBrowserHistory = require("history").createBrowserHistory;
 var _createBrowserHistory2 = _interopRequireDefault(_createBrowserHistory);
 
 var _index = require('./index.js');
@@ -10,9 +9,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.onClientEntry = function (_, _ref) {
   var transitionTime = _ref.transitionTime;
-
+ 
   global.window[_index.pageTransitionTime] = transitionTime || 250;
-};
+};  
 
 var getUserConfirmation = function getUserConfirmation(pathname, callback) {
   var event = new global.window.CustomEvent(_index.pageTransitionEvent, {
@@ -31,4 +30,4 @@ history.block(function (location) {
 });
 exports.onRouteUpdate = function () {
   return history;
-};
+}; 
